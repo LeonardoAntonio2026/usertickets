@@ -24,7 +24,7 @@ public class TicketService {
     public Ticket CrearTicket(CrearTicketDTO dto){
         Ticket ticket = new Ticket();
         ticket.setDescripcion(dto.getDescricion());
-        ticket.setPriodidad(dto.getPrioridad());
+        ticket.setPrioridad(dto.getPrioridad());
         ticket.setEstado(Estado.ABIERTO);
         ticket.setUsuario(userInterface.findById(dto.getUserId()).orElseThrow());
 
@@ -48,7 +48,7 @@ public class TicketService {
     public Ticket EstablecerPriodidad(EstablecerPrioridadDTO dto){
         Ticket ticket = ticketInterface.findById(dto.getTicketId()).orElseThrow();
         if(ticket.getEstado() != Estado.CERRADO){
-            ticket.setPriodidad(dto.getPrioridad());
+            ticket.setPrioridad(dto.getPrioridad());
         } else{
             System.out.println("esta cerrado");
         }

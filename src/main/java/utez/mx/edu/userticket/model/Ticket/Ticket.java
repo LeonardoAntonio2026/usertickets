@@ -22,7 +22,7 @@ public class Ticket {
     private Estado estado;
 
     @Enumerated(EnumType.STRING)
-    private Prioridad priodidad;
+    private Prioridad prioridad;
 
     @ManyToOne
     private User usuario;
